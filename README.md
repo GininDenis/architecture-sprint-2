@@ -2,17 +2,24 @@
 
 ## Как запустить
 
-Запускаем mongodb и приложение
+1. Запускаем mongodb, приложение и кэш
 
 ```shell
 docker compose up -d
 ```
-
-Заполняем mongodb данными
+2. Инициализируем mongodb и заполняем данными
 
 ```shell
 ./scripts/mongo-init.sh
 ```
+
+2. Ждем 10 секунд пока монго уляжется на место
+3. Поднимаем mongos
+
+```shell
+./scripts/init_mongos.sh
+```
+
 
 ## Как проверить
 
@@ -33,3 +40,7 @@ curl --silent http://ifconfig.me
 ## Доступные эндпоинты
 
 Список доступных эндпоинтов, swagger http://<ip виртуальной машины>:8080/docs
+
+## Диаграмма компонентов
+
+https://drive.google.com/file/d/1lR5NGuT56g2VWzFnHhQ63-rOgMtazOaO/view?usp=sharing
